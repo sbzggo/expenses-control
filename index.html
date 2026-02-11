@@ -8,31 +8,60 @@
 
 <body>
     <form>
-        <div>
+        <div class="form-field">
             <div><label>Email:</label></div>
-            <input type="email" name="email" id="email" onchange="onChangeEmail()" placeholder="Seu@email.com"/>
+            <input type="email" name="email" id="email" onchange="onChangeEmail()" placeholder="Seu@email.com" />
             <div class="error" id="email-required-error">Email is mandatory</div>
             <div class="error" id="email-invalid-error">Email is invalid</div>
         </div>
-        <div>
+        <div class="form-field">
             <div><label>Password:</label></div>
-            <input type="password" name="password" id="password" onchange="onChangePassword()" placeholder="Password"/>
+            <input type="password" name="password" id="password" onchange="onChangePassword()" placeholder="Password" />
             <div class="error" id="password-required-error">Password is mandatory</div>
         </div>
         <div>
             <button type="button" class="clear" id="recover-password-buton" disabled="disabled">Forgot password</button>
         </div>
-        <div>    
-            <button type="button" class="solid" id="login-button" disabled="disabled">Submit</button>
+        <div>
+            <button type="button" class="solid" id="login-button" disabled="disabled" onclick="login()">Login</button>
         </div>
         <div>
-            <button type="button" class="outline">Register</button>
+            <button type="button" class="outline" onclick="register()">Register</button>
         </div>
     </form>
 </body>
 
-<link rel="stylesheet" href="index.css"/>
+<link rel="stylesheet" href="index.css" />
+<link rel="stylesheet" href="global.css" />
+
 
 <script src="index.js"></script>
+<script src="validations.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAadFBh5ZCvpBWzyMthm5rEJM_g2xq_7vU",
+        authDomain: "expenses-control-ep3962.firebaseapp.com",
+        projectId: "expenses-control-ep3962",
+        storageBucket: "expenses-control-ep3962.firebasestorage.app",
+        messagingSenderId: "1020764645239",
+        appId: "1:1020764645239:web:3f04a8bf1cacbdeb60e372"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    console.log('before');
+    firebase.auth().signInWithEmailAndPassword(
+        "goncalvesguilherme741@email.com",
+        "39620900")
+        .then(response => {
+            console.log("login success", response);
+        })
+        .catch(error => {
+            console.log("login error", error);
+        });
+
+
+</script>
 
 </html>

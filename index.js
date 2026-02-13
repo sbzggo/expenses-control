@@ -12,15 +12,17 @@ function onChangePassword() {
 }
 
 function login() {
-
+    showLoading();
     firebase.auth().signInWithEmailAndPassword(
         form.email().value,
         form.password().value
     )
         .then(response => {
+            hideLoading();
             window.location.href = "pages/home/home.html";
         })
         .catch(error => {
+            hideLoading();
             alert(getErrorMessage(error));
         });
 
@@ -28,13 +30,14 @@ function login() {
 
 function getErrorMessage(error) {
     if (error.code === "auth/invalid-credential") {
-        return "User not found";
+        return "Email or password incorrect";
     }
     return error.message;
 }
 
+
 function register() {
-    window.location.href = "pages/register/register.html";
+   window.location.href = "pages/register/register.html";
 }
 
 function isEmailValid() {
@@ -44,6 +47,19 @@ function isEmailValid() {
     }
     return validateEmail(email);
 }
+
+function recoverPassword() {
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
+        hideLoading();
+        alert('Email sent successfully');
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    });
+    
+}
+
 
 function toggleEmailErrors() {
     const email = form.email().value;

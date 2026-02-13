@@ -2,28 +2,33 @@
 
 🚧 **Status do projeto:** Em desenvolvimento
 
-Sistema web para controle de gastos pessoais, com autenticação via Firebase, desenvolvido com foco em aprendizado de HTML, CSS, JavaScript e versionamento com Git/GitHub.
+Sistema web para controle de gastos pessoais com autenticação via Firebase.
+Projeto focado em prática de HTML, CSS, JavaScript puro (Vanilla JS) e versionamento com Git/GitHub.
 
 ---
 
 ## 🔐 Funcionalidades implementadas
 
-- [x] Estrutura da tela de Login
+- [x] Tela de Login estruturada
 - [x] Estilização com CSS
 - [x] Validação de email e senha
 - [x] Habilitação/desabilitação dinâmica de botões
 - [x] Integração com Firebase Authentication
+- [x] Tratamento personalizado de erros de autenticação
 - [x] Redirecionamento após login
+- [x] Componente de Loading durante requisições
+- [x] Recuperação de senha via Firebase
+- [x] Estrutura inicial da tela de Registro
 
 ---
 
 ## 🚧 Em desenvolvimento
 
-- [ ] Tela de cadastro funcional
-- [ ] Recuperação de senha
-- [ ] Proteção de rotas (usuário logado)
+- [ ] Cadastro de usuário funcional
+- [ ] Proteção de rotas (verificação de usuário logado)
+- [ ] Logout
 - [ ] Sistema de cadastro de despesas
-- [ ] Armazenamento de dados (Firestore ou Realtime Database)
+- [ ] Integração com Firestore
 - [ ] Dashboard com listagem de gastos
 
 ---
@@ -32,7 +37,7 @@ Sistema web para controle de gastos pessoais, com autenticação via Firebase, d
 
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript (Vanilla JS)
 - Firebase Authentication
 
 ---
@@ -45,8 +50,6 @@ Projeto desenvolvido para prática de:
 - Manipulação do DOM
 - Validação de formulários
 - Integração com APIs externas (Firebase)
+- Organização de código
 - Controle de versão com Git e GitHub
-
----
-
-👨‍💻 Desenvolvido por Guilherme Oliveira
+- Boas práticas de commits (Conve
